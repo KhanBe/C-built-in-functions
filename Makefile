@@ -6,7 +6,7 @@
 #    By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 21:04:12 by jaewoo            #+#    #+#              #
-#    Updated: 2021/11/17 21:04:33 by jaewoo           ###   ########.fr        #
+#    Updated: 2021/11/22 23:58:57 by jaewoo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,8 +42,8 @@ SRCS = ft_isalpha.c \
 	   ft_memcmp.c \
 	   ft_strnstr.c \
 	   ft_atoi.c \
-	   ft_calloc \
-	   ft_strdup
+	   ft_calloc.c \
+	   ft_strdup.c
 OBJS = $(addprefix $(SRCS_DIR)/, $(SRCS:.c=.o))
 
 all : $(TARGET)

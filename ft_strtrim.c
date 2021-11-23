@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 17:44:07 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/23 13:36:03 by jaewoo           ###   ########.fr       */
+/*   Created: 2021/11/23 12:20:31 by jaewoo            #+#    #+#             */
+/*   Updated: 2021/11/23 12:29:53 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int ch)
+char	*ft_strtrim(const char *s1, const char *set)
 {
-	int		i;
-	char	temp;
-	char	*stemp;
 
-	i = 0;
-	temp = (char)ch;
-	stemp = (char *)str;
-	while (stemp[i] != temp)
-	{
-		if (stemp[i] == '\0')
-			return (NULL);
-		i++;
-	}
-	return (&stemp[i]);
 }

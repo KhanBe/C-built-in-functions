@@ -1,31 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 17:44:07 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/23 13:36:03 by jaewoo           ###   ########.fr       */
+/*   Created: 2021/11/23 13:56:12 by jaewoo            #+#    #+#             */
+/*   Updated: 2021/11/23 14:32:48 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int ch)
+char	*ft_strmapi(const char *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	char	temp;
-	char	*stemp;
+	size_t	i;
+	size_t	len_s;
+	char	*temp;
 
+	if (!s || !f)
+		return (NULL);
+	len_s = ft_strlen(s);
+	temp = (char *)malloc(sizeof(char) * (len_s + 1));
+	if (!temp)
+		return (NULL);
 	i = 0;
-	temp = (char)ch;
-	stemp = (char *)str;
-	while (stemp[i] != temp)
+	while (s[i] != '\0')
 	{
-		if (stemp[i] == '\0')
-			return (NULL);
+		temp[i] = f(i, s[i]);
 		i++;
 	}
-	return (&stemp[i]);
+	temp[i] = '\0';
+	return (temp);
 }

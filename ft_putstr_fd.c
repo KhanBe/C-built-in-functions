@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 17:44:07 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/23 13:36:03 by jaewoo           ###   ########.fr       */
+/*   Created: 2021/11/23 15:07:25 by jaewoo            #+#    #+#             */
+/*   Updated: 2021/11/23 15:20:33 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *str, int ch)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int		i;
-	char	temp;
-	char	*stemp;
-
-	i = 0;
-	temp = (char)ch;
-	stemp = (char *)str;
-	while (stemp[i] != temp)
-	{
-		if (stemp[i] == '\0')
-			return (NULL);
-		i++;
-	}
-	return (&stemp[i]);
+	if (!s || fd < 0)
+		return ;
+	write(fd, s, ft_strlen(s));
 }
