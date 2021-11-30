@@ -1,33 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 12:20:31 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/29 15:42:00 by jaewoo           ###   ########.fr       */
+/*   Created: 2021/11/30 00:32:42 by jaewoo            #+#    #+#             */
+/*   Updated: 2021/11/30 00:40:28 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(const char *s1, const char *set)
+t_list	*ft_lstnew(void *content)
 {
-	size_t	right;
-	size_t	left;
-	char	*result;
+	t_list	*list;
 
-	left = 0;
-	if (s1 == NULL || set == NULL)
-		return (0);
-	right = ft_strlen(s1);
-	while (s1[left] && ft_strchr(set, s1[left]))
-		left++;
-	while (s1[right - 1] && ft_strchr(set, s1[right - 1]))
-		right--;
-	if (left > right)
-		return (ft_strdup(""));
-	result = ft_substr(s1, left, right - left);
-	return (result);
+	list = (t_list *)malloc(sizeof(t_list));
+	if (!list)
+		return (NULL);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }

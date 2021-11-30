@@ -6,7 +6,7 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:28:43 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/23 16:37:07 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/11/29 15:20:45 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,4 @@ void	ft_putnbr_fd(int n, int fd)
 	if (10 <= n)
 		ft_putnbr_fd(n / 10, fd);
 	ft_putchar_fd(n % 10 + '0', fd);
-}
-
-int main(void)
-{
-	ft_putnbr_fd(-423, 1);
 }

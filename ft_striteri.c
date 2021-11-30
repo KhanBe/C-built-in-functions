@@ -6,7 +6,7 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:56:31 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/23 14:58:12 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/11/29 16:15:41 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,14 @@
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
+	unsigned int	i;
 
+	if (!s || !f)
+		return ;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		f(i, s[i]);
+		i++;
+	}
 }
