@@ -6,36 +6,21 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 18:06:06 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/23 13:36:58 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/12/09 17:25:52 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != 0)
-		i++;
-	return (i);
-}
-
 char	*ft_strrchr(const char *str, int ch)
 {
-	int		i;
-	char	temp;
-	char	*stemp;
+	const char	*temp;
 
-	i = ft_strlen(str);
-	temp = (char)ch;
-	stemp = (char *)str;
-	while (stemp[i] != temp)
-	{
-		if (stemp[i] == '\0')
-			return (NULL);
-		i--;
-	}
-	return (&stemp[i]);
+	temp = str;
+	str = str + ft_strlen(str);
+	while (*str != *temp && (char)ch != *str)
+		str--;
+	if (ch == *str)
+		return ((char *)str);
+	return (0);
 }

@@ -6,21 +6,11 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 17:10:15 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/20 17:26:12 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/12/09 16:27:13 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i] != 0)
-		i++;
-	return (i);
-}
 
 size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 {

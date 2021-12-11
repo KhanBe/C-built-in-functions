@@ -6,17 +6,17 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 21:05:19 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/17 22:56:16 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/12/09 17:01:59 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	isalnum(int alnum)
+int	ft_isalnum(int c)
 {
-	if ('0' <= alnum && alnum <= '9')
+	if ('0' <= c && c <= '9')
 		return (1);
-	else if ('a' <= alnum && alnum <= 'z')
+	else if ('a' <= c && c <= 'z')
 		return (1);
-	else if ('A' <= alnum && alnum <= 'Z')
+	else if ('A' <= c && c <= 'Z')
 		return (1);
 	else
 		return (0);

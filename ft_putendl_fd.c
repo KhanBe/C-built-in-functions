@@ -6,7 +6,7 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 15:20:55 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/23 15:24:15 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/12/09 16:06:17 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	if (s != '\0')
+	if (s)
 	{
 		ft_putstr_fd(s, fd);
-		write(fd, '\n', 1);
+		write(fd, "\n", 1);
 	}
 }

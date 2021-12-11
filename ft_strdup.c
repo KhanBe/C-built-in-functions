@@ -6,13 +6,13 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:19:57 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/11/22 20:40:06 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/12/09 15:42:29 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(char *src)
+char	*ft_strdup(const char *src)
 {
 	char	*array;
 	size_t	len;
