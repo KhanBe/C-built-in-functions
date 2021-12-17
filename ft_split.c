@@ -5,56 +5,93 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 13:24:16 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/12/11 15:06:53 by jaewoo           ###   ########.fr       */
+/*   Created: 2021/12/18 01:30:46 by jaewoo            #+#    #+#             */
+/*   Updated: 2021/12/18 02:05:45 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_words(char const *s, char c)
+static	void	freestr(char **str, size_t index)
+{
+	while (index--)
+	{
+		free(str[index]);
+		str[index] = NULL;
+	}
+	free(str);
+	str = NULL;
+}
+
+static	size_t	hms(const char *s, char c)
 {
 	size_t	i;
-	size_t	count;
+	size_t	result;
 
 	i = 0;
-	count = 0;
-	while (s[i] != '\0')
+	result = 0;
+	while (s[i])
 	{
 		while (s[i] == c)
 			i++;
-		if (s[i])
-			count++;
-		while (s[i] != c && s[i])
-			i++;
+		if (s[i] && s[i] != c)
+		{
+			while (s[i] && s[i] != c)
+				i++;
+			result++;
+		}
 	}
-	return (count);
+	return (result);
 }
 
-char	**ft_split(char const *s, char c)
+size_t	endcount(const char *s, char c, size_t end)
 {
-	char	**split;
+	while (s[end] != c && s[end])
+		end++;
+	return (end);
+}
+
+static char	**splitcpy(char **str, const char *s, char c, size_t hmsplit)
+{
+	size_t	index;
 	size_t	start;
 	size_t	end;
-	size_t	i;
 
-	split = (char **)malloc((count_words(s, c) + 1) * sizeof(char *));
-	if (!s || !c || !split)
-		return (0);
-	start = 0;
+	index = 0;
 	end = 0;
-	i = 0;
-	while (i < count_words(s, c))
+	while (s[end] == c && s[end])
+		end++;
+	while (index < hmsplit)
 	{
-		while (s[start] == c)
-			start++;
-		end = start;
-		while (s[end] != c && s[end])
-			end++;
-		split[i] = ft_substr(s, start, (end - start));
 		start = end;
-		i++;
+		end = endcount(s, c, end);
+		str[index] = malloc(sizeof(char) * (end - start + 1));
+		if (!str[index])
+		{
+			freestr(str, index);
+			return (NULL);
+		}
+		ft_strlcpy(str[index], s + start, end - start + 1);
+		while (s[end] == c)
+			end++;
+		index++;
 	}
-	split[i] = 0;
-	return (split);
+	str[hmsplit] = NULL;
+	return (str);
+}
+
+char	**ft_split(const char *s, char c)
+{
+	char	**str;
+	size_t	hmsplit;
+
+	if (!s)
+		return (NULL);
+	hmsplit = hms(s, c);
+	str = malloc(sizeof(char *) * (hmsplit + 1));
+	if (!str)
+		return (NULL);
+	if (!splitcpy(str, s, c, hmsplit))
+		return (NULL);
+	return (str);
 }
