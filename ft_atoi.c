@@ -6,7 +6,7 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/17 21:15:34 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/12/18 00:34:20 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/12/18 22:34:06 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	result;
-	int	sign;
+	int		i;
+	long	result;
+	int		sign;
 
 	i = 0;
 	result = 0;
