@@ -6,7 +6,7 @@
 #    By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/17 21:04:12 by jaewoo            #+#    #+#              #
-#    Updated: 2021/12/09 15:15:52 by jaewoo           ###   ########.fr        #
+#    Updated: 2021/12/22 17:38:13 by jaewoo           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ all : $(NAME)
 clean :
 	rm -f $(OBJS) $(OBJS_BONUS)
 
-fclean :
+fclean : clean
 	rm -f $(NAME)
 
 re : fclean all
