@@ -6,7 +6,7 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 01:30:46 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/12/18 02:05:45 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/12/26 20:06:37 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	void	freestr(char **str, size_t index)
 	str = NULL;
 }
 
-static	size_t	hms(const char *s, char c)
+static	size_t	get_size(const char *s, char c)
 {
 	size_t	i;
 	size_t	result;
@@ -51,7 +51,7 @@ size_t	endcount(const char *s, char c, size_t end)
 	return (end);
 }
 
-static char	**splitcpy(char **str, const char *s, char c, size_t hmsplit)
+static char	**splitcpy(char **str, const char *s, char c, size_t split_size)
 {
 	size_t	index;
 	size_t	start;
@@ -61,7 +61,7 @@ static char	**splitcpy(char **str, const char *s, char c, size_t hmsplit)
 	end = 0;
 	while (s[end] == c && s[end])
 		end++;
-	while (index < hmsplit)
+	while (index < split_size)
 	{
 		start = end;
 		end = endcount(s, c, end);
@@ -76,22 +76,22 @@ static char	**splitcpy(char **str, const char *s, char c, size_t hmsplit)
 			end++;
 		index++;
 	}
-	str[hmsplit] = NULL;
+	str[split_size] = NULL;
 	return (str);
 }
 
 char	**ft_split(const char *s, char c)
 {
 	char	**str;
-	size_t	hmsplit;
+	size_t	split_size;
 
 	if (!s)
 		return (NULL);
-	hmsplit = hms(s, c);
-	str = malloc(sizeof(char *) * (hmsplit + 1));
+	split_size = get_size(s, c);
+	str = malloc(sizeof(char *) * (split_size + 1));
 	if (!str)
 		return (NULL);
-	if (!splitcpy(str, s, c, hmsplit))
+	if (!splitcpy(str, s, c, split_size))
 		return (NULL);
 	return (str);
 }
