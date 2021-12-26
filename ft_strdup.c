@@ -6,7 +6,7 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 20:19:57 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/12/17 16:49:14 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/12/26 18:14:41 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,7 @@ char	*ft_strdup(const char *src)
 	size_t	len;
 	size_t	i;
 
-	len = 0;
-	while (src[len] != '\0')
-		len++;
+	len = ft_strlen(src);
 	array = (char *)malloc(sizeof(char) * (len + 1));
 	if (!array)
 		return (NULL);
