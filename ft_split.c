@@ -6,7 +6,7 @@
 /*   By: jaewoo <jaewoo@student.42seoul.kr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/18 01:30:46 by jaewoo            #+#    #+#             */
-/*   Updated: 2021/12/26 20:06:37 by jaewoo           ###   ########.fr       */
+/*   Updated: 2021/12/27 15:49:35 by jaewoo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static	size_t	get_size(const char *s, char c)
 	return (result);
 }
 
-size_t	endcount(const char *s, char c, size_t end)
+size_t	get_end(const char *s, char c, size_t end)
 {
 	while (s[end] != c && s[end])
 		end++;
@@ -64,7 +64,7 @@ static char	**splitcpy(char **str, const char *s, char c, size_t split_size)
 	while (index < split_size)
 	{
 		start = end;
-		end = endcount(s, c, end);
+		end = get_end(s, c, end);
 		str[index] = malloc(sizeof(char) * (end - start + 1));
 		if (!str[index])
 		{
