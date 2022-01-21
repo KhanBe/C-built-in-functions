@@ -18,49 +18,47 @@ memset은 1바이트 단위로 값을 초기화 하기 때문에 char 형태 또
 3번째 인자는 sizeof(자료형) 으로 받는다.  
 
 ### 2. void *ft_bzero(void *dest, size_t len)
-dest - 주소.  
-len - 길이.  
+- dest - 주소.  
+- len - 길이.  
 memset에서 value를 0으로 채우면 bzero.  
+
 ### 3. void *ft_memcpy(void *dest, const void *src, size_t num)
-dest - 복사 받을 주소.  
-src - 복사 대상 주소.  
-num - 복사 크기.  
+- dest - 복사 받을 주소.  
+- src - 복사 대상 주소.  
+- num - 복사 크기.  
 dest에 src를 num만큼 복사하는 함수.  
 함수 사용 예시 ).  
 memcpy(dest, src, sizeof(int) * 3) 또는.  
 memcpy(dest, src, sizeof(src)).  
 
 ### 4. void *ft_memmove(void *dest, const void *src, size_t n)
-dest - 복사 받을 주소.  
-src - 복사 대상 주소.  
-n - 복사할 크기.  
+- dest - 복사 받을 주소.  
+- src - 복사 대상 주소.  
+- n - 복사할 크기.  
 src메모리 영역에서 dest 메모리 영역으로 n바이트 만큼 복사.  
 src 시작 주소가 dest 시작 주소보다 앞에 있을 때, 오버랩이 나타날 수 있다.  
 그래서 뒤에서 부터 한 바이트 씩 복사해야한다.  
 
 ### 5. size_t ft_strlcpy(char * dest, const char *src, size_t size)
-dest - 복사 받을 주소.  
-src - 복사 대상 주소.  
-size - 복사할 크기.  
+- dest - 복사 받을 주소.  
+- src - 복사 대상 주소.  
+- size - 복사할 크기.  
 size - 1 만큼 복사하고 NULL-terminate 한다.  
 
 ### 6. size_t ft_strlcat(char *dest, const char *src, size_t destsize)
 dest 와 src 이어 붙이는 함수.  
-마지막은 NULL-terminating
-dest길이 + src길이 < destsize
-처럼 넉넉한 사이즈가 있으면 모두 이어 붙일 수 있고
-dest길이 + src길이 리턴
-dest길이 + src길이 > destsize
-이고 destsize가 7이면 dest길이가 총6 만큼 이어붙고
-dest길이 + src길이 리턴
-dest길이 >= destsize
-이면 문자열을 이어붙지 않고
-src길이 + destsize 리턴
-int ft_toupper(int c)
-소문자를 대문자로 변환해주는 함수
-int ft_tolower(int c)
-대문자를 소문자로 변환해주는 함수
-char *ft_strchr(const char *str, int ch)
+마지막은 NULL-terminating.  
+(dest길이 + src길이 < destsize) 처럼 넉넉한 사이즈가 있으면 모두 이어 붙일 수 있고, (dest길이 + src길이) 리턴한다   
+(dest길이 + src길이 > destsize) 이고 destsize가 7이면 dest길이가 총6 만큼 이어붙고, (dest길이 + src길이) 리턴한다.
+(dest길이 >= destsize) 이면 문자열을 이어붙지 않고, (src길이 + destsize) 리턴한다.
+
+### 7. int ft_toupper(int c)
+소문자를 대문자로 변환해주는 함수이다   
+
+### 8. int ft_tolower(int c)
+대문자를 소문자로 변환해주는 함수   
+
+### 9. char *ft_strchr(const char *str, int ch)
 str - 찾아볼 문자열
 ch - 찾을 문자
 문자열 앞에서 부터 문자를 찾으면 그 주소부터 반환
