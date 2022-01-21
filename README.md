@@ -1,5 +1,5 @@
 # C-built-in-functions
-## C언어의 내장함수를 알아본다.
+## 42서울에서 필요한 내장함수 (C language)를 구현하는 프로젝트이다.
 
 42seoul 본과정의 첫프로젝트이다.
 프로젝트의 내용은 시간에 따라 변할 수 있다.
@@ -9,7 +9,7 @@ unsigned char는 모든 bit를 투명하게 볼 수 있는 특성을 제공한�
 다른 타입은 내부 비트의 일부를 값을 표현하기 위한 용도가 아닌 다른용도로 사용할 수 있으나 unsigned char는 다른 용도로 사용 할 수 없다.
 따라서, 임의의 메모리에 바이트 단위로 접근해 값을 다룰 때에는 반드시 unsigned char를 사용하자.
 
-#### 1. void *ft_memset(void *dest, int value, size_t count)
+### 1. void *ft_memset(void *dest, int value, size_t count)
 dest - 주소
 value - 이 값으로 초기화
 count - 크기
@@ -17,7 +17,7 @@ memset은 1바이트 단위로 값을 초기화 하기 때문에 char 형태 또
 그래서 unsigned char 로 형변환한다.
 3번째 인자는 sizeof(자료형) 으로 받는다.
 
-#### 2. void *ft_bzero(void *dest, size_t len)
+### 2. void *ft_bzero(void *dest, size_t len)
 dest - 주소
 len - 길이
 memset에서 value를 0으로 채우면 bzero
