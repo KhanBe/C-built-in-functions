@@ -59,28 +59,28 @@ dest 와 src 이어 붙이는 함수.
 대문자를 소문자로 변환해주는 함수   
 
 ### 9. char *ft_strchr(const char *str, int ch)
-str - 찾아볼 문자열
-ch - 찾을 문자
-문자열 앞에서 부터 문자를 찾으면 그 주소부터 반환
-char *ft_strrchr(const char *str, int ch)
-str - 찾아볼 문자열
-ch - 찾을 문자
-문자열 뒤에서 부터 문자를 찾으면 그 주소부터 반환
-문자열의 널 종료 문자역시 c문자열의 일부분이라 생각한다.
-그래서 !ch 일 경우 문자열의 NULL 포인터를 반환한다.
-int ft_strncmp(const char *s1, const char *s2, size_t n)
-s1 - 	비교문자열
-s2 - 비교문자열
-n - 비교할 문자열 길이
-n에 -1넣을 경우 unsigned int 에서 언더플로우 발생으로 최대값이 들어간다.
-그래서 문자열을 끝까지 비교한다.
-s1이 크면 양수 반환
-s2이 크면 음수 반환
-두 문자열이 정확히 같으면 0 반환
-void *ft_memchr(const void *s, int c, size_t n)
-s - 검색할 시작 주소
-c - 찾을 값
-n - 검색할 만큼의 바이트 수
+- str - 찾아볼 문자열   
+- ch - 찾을 문자   
+문자열 앞에서 부터 문자를 찾으면 그 주소부터 반환   
+### 10. char *ft_strrchr(const char *str, int ch)
+- str - 찾아볼 문자열   
+- ch - 찾을 문자   
+문자열 뒤에서 부터 문자를 찾으면 그 주소부터 반환   
+문자열의 널 종료 문자역시 c문자열의 일부분이라 생각한다   
+그래서 !ch 일 경우 문자열의 NULL 포인터를 반환한다   
+### 11. int ft_strncmp(const char *s1, const char *s2, size_t n)
+- s1 - 	비교문자열   
+- s2 - 비교문자열   
+- n - 비교할 문자열 길이   
+n에 -1넣을 경우 unsigned int 에서 언더플로우 발생으로 최대값이 들어간다.   
+그래서 문자열을 끝까지 비교한다.   
+s1이 크면 양수 반환   
+s2이 크면 음수 반환   
+두 문자열이 정확히 같으면 0 반환   
+### 12. void *ft_memchr(const void *s, int c, size_t n)
+- s - 검색할 시작 주소
+- c - 찾을 값
+- n - 검색할 만큼의 바이트 수
 함수 내에서는 한 바이트씩 비교하기 때문에 unsigned char로 변환되어 사용된다.
 int ft_memcmp(const void *s1, const void *s2, size_t n)
 s1 - 비교 포인터
