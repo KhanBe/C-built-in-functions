@@ -133,12 +133,13 @@ strcpy를 사용시 복사될 문자열 공간이 작으면 문자열이 짤린�
 
 ### 19. char *ft_strjoin(const char *s1, const char *s2)
 s1 + s2 + 1 만큼의 길이 할당하고 s1 + s2를 이어 붙이고 NULL-terminating 하는 함수이다.   
-char *ft_strtrim(const char *s1, const char *set)
+
+### 20. char *ft_strtrim(const char *s1, const char *set)
 - s1 - 찾아볼 문자열
 - set - 지울 문자들
 - set에 포함된 문자들을 s1문자열의 양끝에서 제거한 결과를 반환하는 함수
 
-### 20. char **ft_split(const char *s, char c)
+### 21. char **ft_split(const char *s, char c)
 - s - 나눌 문자열
 - c - 구분
 문자열을 구분자로 나누어 이차원 문자열로 반환하는 함수.  
@@ -146,13 +147,13 @@ char *ft_strtrim(const char *s1, const char *set)
 - start - 문자열 처음 인덱스.  
 - split_size - 쪼개질 문자열 수.  
 
-### 21. char *ft_itoa(int n)
+### 22. char *ft_itoa(int n)
 int형 숫자를 받아 문자열숫자로 반환하는 함수.  
 
-### 22. char *ft_strmapi(const char *s, char (*f)(unsigned int, char))
+### 23. char *ft_strmapi(const char *s, char (*f)(unsigned int, char))
 s문자열의 각 문자에 f함수를 적용시킨 문자열을 새로 할당하여 반환해주는 함수.  
 
-### 23. void ft_striteri(char *s, void (*f)(unsigned int, char*))
+### 24. void ft_striteri(char *s, void (*f)(unsigned int, char*))
 새로운 할당없이 문자열s 각 문자에 f함수 바로 적용하는 함수, 반환값 없음.  
 
 ## 파일 디스크립터
@@ -160,22 +161,22 @@ s문자열의 각 문자에 f함수를 적용시킨 문자열을 새로 할당�
 - 표준 입력 : 0
 - 표준 출력 : 1
 - 표준 에러 출력 : 2
-### 24. void ft_putchar_fd(char c, int fd)
+### 25. void ft_putchar_fd(char c, int fd)
 - c - 출력할 문자
 - fd - 쓰일 파일 디스크립터
 - 문자를 출력해주는 함수
 
-### 25. void ft_putstr_fd(char *s, int fd)
+### 26. void ft_putstr_fd(char *s, int fd)
 - s - 출력할 문자열
 - fd - 쓰일 파일 디스크립터
 문자열을 출력해주는 함수
 
-### 26. void ft_putendl_fd(char *s, int fd)
+### 27. void ft_putendl_fd(char *s, int fd)
 - s - 출력할 문자열
 - fd - 쓰일 파일 디스크립터
 문자열을 출력해주고 다음줄로 넘어가주는 함수
 
-### 27. void ft_putnbr_fd(int n, int fd)
+### 28. void ft_putnbr_fd(int n, int fd)
 - n - int형 숫자
 - fd - 쓰일 파일 디스크립터
 int형 숫자를 문자열숫자로 출력해주는 함수
