@@ -30,11 +30,11 @@ dest에 src를 num만큼 복사하는 함수.
 memcpy(dest, src, sizeof(int) * 3) 또는.  
 memcpy(dest, src, sizeof(src)).  
 
-void *ft_memmove(void *dest, const void *src, size_t n)
-dest - 복사 받을 주소
-src - 복사 대상 주소
-n - 복사할 크기
-src메모리 영역에서 dest 메모리 영역으로 n바이트 만큼 복사
+### 4. void *ft_memmove(void *dest, const void *src, size_t n)
+dest - 복사 받을 주소.
+src - 복사 대상 주소.
+n - 복사할 크기.
+src메모리 영역에서 dest 메모리 영역으로 n바이트 만큼 복사.
 src 시작 주소가 dest 시작 주소보다 앞에 있을 때, 오버랩이 나타날 수 있다.
 그래서 뒤에서 부터 한 바이트 씩 복사해야한다.
 size_t ft_strlcpy(char * dest, const char *src, size_t size)
