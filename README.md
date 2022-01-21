@@ -10,25 +10,26 @@ unsigned char는 모든 bit를 투명하게 볼 수 있는 특성을 제공한�
 따라서, 임의의 메모리에 바이트 단위로 접근해 값을 다룰 때에는 반드시 unsigned char를 사용하자.
 
 ### 1. void *ft_memset(void *dest, int value, size_t count)
-dest - 주소
-value - 이 값으로 초기화
-count - 크기
-memset은 1바이트 단위로 값을 초기화 하기 때문에 char 형태 또는 0으로만 가능하다.
-그래서 unsigned char 로 형변환한다.
-3번째 인자는 sizeof(자료형) 으로 받는다.
+dest - 주소.  
+value - 이 값으로 초기화.  
+count - 크기.  
+memset은 1바이트 단위로 값을 초기화 하기 때문에 char 형태 또는 0으로만 가능하다.  
+그래서 unsigned char 로 형변환한다.  
+3번째 인자는 sizeof(자료형) 으로 받는다.  
 
 ### 2. void *ft_bzero(void *dest, size_t len)
-dest - 주소
-len - 길이
-memset에서 value를 0으로 채우면 bzero
-void *ft_memcpy(void *dest, const void *src, size_t num)
-dest - 복사 받을 주소
-src - 복사 대상 주소
-num - 복사 크기
-dest에 src를 num만큼 복사하는 함수
-함수 사용 예시 )
-memcpy(dest, src, sizeof(int) * 3) 또는
-memcpy(dest, src, sizeof(src))
+dest - 주소.  
+len - 길이.  
+memset에서 value를 0으로 채우면 bzero.  
+### 3. void *ft_memcpy(void *dest, const void *src, size_t num)
+dest - 복사 받을 주소.  
+src - 복사 대상 주소.  
+num - 복사 크기.  
+dest에 src를 num만큼 복사하는 함수.  
+함수 사용 예시 ).  
+memcpy(dest, src, sizeof(int) * 3) 또는.  
+memcpy(dest, src, sizeof(src)).  
+
 void *ft_memmove(void *dest, const void *src, size_t n)
 dest - 복사 받을 주소
 src - 복사 대상 주소
