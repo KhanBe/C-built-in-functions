@@ -9,6 +9,8 @@ unsigned char는 모든 bit를 투명하게 볼 수 있는 특성을 제공한�
 다른 타입은 내부 비트의 일부를 값을 표현하기 위한 용도가 아닌 다른용도로 사용할 수 있으나 unsigned char는 다른 용도로 사용 할 수 없다.
 따라서, 임의의 메모리에 바이트 단위로 접근해 값을 다룰 때에는 반드시 unsigned char를 사용하자.
 
+## Mandatory
+
 ### 1. void *ft_memset(void *dest, int value, size_t count)
 - dest - 주소.  
 - value - 이 값으로 초기화.  
@@ -62,12 +64,14 @@ dest 와 src 이어 붙이는 함수.
 - str - 찾아볼 문자열   
 - ch - 찾을 문자   
 문자열 앞에서 부터 문자를 찾으면 그 주소부터 반환   
+
 ### 10. char *ft_strrchr(const char *str, int ch)
 - str - 찾아볼 문자열   
 - ch - 찾을 문자   
 문자열 뒤에서 부터 문자를 찾으면 그 주소부터 반환   
 문자열의 널 종료 문자역시 c문자열의 일부분이라 생각한다   
 그래서 !ch 일 경우 문자열의 NULL 포인터를 반환한다   
+
 ### 11. int ft_strncmp(const char *s1, const char *s2, size_t n)
 - s1 - 	비교문자열   
 - s2 - 비교문자열   
@@ -77,166 +81,193 @@ n에 -1넣을 경우 unsigned int 에서 언더플로우 발생으로 최대값�
 s1이 크면 양수 반환   
 s2이 크면 음수 반환   
 두 문자열이 정확히 같으면 0 반환   
+
 ### 12. void *ft_memchr(const void *s, int c, size_t n)
 - s - 검색할 시작 주소
 - c - 찾을 값
 - n - 검색할 만큼의 바이트 수
-함수 내에서는 한 바이트씩 비교하기 때문에 unsigned char로 변환되어 사용된다.
-int ft_memcmp(const void *s1, const void *s2, size_t n)
-s1 - 비교 포인터
-s2 - 비교 포인터
-n - 비교할 바이트 수
-s1이 크면 양수 반환
-s2이 크면 음수 반환
-두 메모리 블록이 정확히 같으면 0 반환
-char *ft_strnstr(const char *str, const char *to_find, size_t len)
-str - 찾아볼 문자열
-to_find - 찾을 문자열
-len - 찾아볼 길이
-str문자열에서 to_find문자열 찾기
-찾으면 찾은시작 주소 반환
-int ft_atoi(const char *str)
-str - int형으로 바꿀 문자열
+함수 내에서는 한 바이트씩 비교하기 때문에 unsigned char로 변환되어 사용된다.   
+
+### 13. int ft_memcmp(const void *s1, const void *s2, size_t n)
+- s1 - 비교 포인터
+- s2 - 비교 포인터
+- n - 비교할 바이트 수
+s1이 크면 양수 반환   
+s2이 크면 음수 반환   
+두 메모리 블록이 정확히 같으면 0 반환   
+
+### 14. char *ft_strnstr(const char *str, const char *to_find, size_t len)
+- str - 찾아볼 문자열
+- to_find - 찾을 문자열
+- len - 찾아볼 길이
+str문자열에서 to_find문자열 찾기   
+찾으면 찾은시작 주소 반환   
+
+### 15. int ft_atoi(const char *str)
+- str - int형으로 바꿀 문자열
 문자열 형태의 숫자를 int형 숫자로 변환해주는 함수
-void *ft_calloc(size_t count, size_t size)
+
+### 16. void *ft_calloc(size_t count, size_t size)
 count - 할당 할 수
 size - 변수의 크기
-size크기의 변수를 count개 만큼을 할당하고 0으로 초기화 해주는 함수
+size크기의 변수를 count개 만큼을 할당하고 0으로 초기화 해주는 함수   
 예시 )
 arr = (int *) malloc(sizeof(int) * 5);
 arr = (int *) calloc(5, sizeof(int));
-calloc은 할당공간을 모두 0으로 초기화한다.
-malloc은 할당공간 값을 바꾸지 않는다.
-char *ft_strdup(const char *src)
-src - 복사할 문자열
-문자열을 새로운 메모리에 할당하여 복제하는 함수
-strcpy와 같은 기능이지만 내부적으로 다름
-strcpy를 사용시 복사될 문자열 공간이 작으면 문자열이 짤린다.
-이런 단점을 보완해주는 strdup는 동적할당을 해준다.
-char *ft_substr(const char *s, unsigned int start, size_t len)
-s - 잘라낼 문자열
-start - 잘라낼 문자열의 처음 인덱스
-len - start부터 자를 길이
-문자열 s를 start인덱스부터 start + len 까지 잘라서 반환해주는 함수
-start + len > s길이 
-일 경우 start인덱스부터 s끝까지 자른다.
-char *ft_strjoin(const char *s1, const char *s2)
-s1 + s2 + 1 만큼의 길이 할당하고 s1 + s2를 이어 붙이고 NULL-terminating 하는 함수
+calloc은 할당공간을 모두 0으로 초기화한다.   
+malloc은 할당공간 값을 바꾸지 않는다.   
+
+### 17. char *ft_strdup(const char *src)
+- src - 복사할 문자열
+문자열을 새로운 메모리에 할당하여 복제하는 함수   
+strcpy와 같은 기능이지만 내부적으로 다름   
+strcpy를 사용시 복사될 문자열 공간이 작으면 문자열이 짤린다.   
+이런 단점을 보완해주는 strdup는 동적할당을 해준다.   
+
+### 18. char *ft_substr(const char *s, unsigned int start, size_t len)
+- s - 잘라낼 문자열
+- start - 잘라낼 문자열의 처음 인덱스
+- len - start부터 자를 길이
+문자열 s를 start인덱스부터 start + len 까지 잘라서 반환해주는 함수   
+(start + len > s길이) 일 경우 start인덱스부터 s끝까지 자른다.   
+
+### 19. char *ft_strjoin(const char *s1, const char *s2)
+s1 + s2 + 1 만큼의 길이 할당하고 s1 + s2를 이어 붙이고 NULL-terminating 하는 함수이다.   
 char *ft_strtrim(const char *s1, const char *set)
-s1 - 찾아볼 문자열
-set - 지울 문자들
-set에 포함된 문자들을 s1문자열의 양끝에서 제거한 결과를 반환하는 함수
-char **ft_split(const char *s, char c)
-s - 나눌 문자열
-c - 구분
-문자열을 구분자로 나누어 이차원 문자열로 반환하는 함수
-end - 문자열 마지막 인덱스
-start - 문자열 처음 인덱스
-split_size - 쪼개질 문자열 수
-char *ft_itoa(int n)
-int형 숫자를 받아 문자열숫자로 반환하는 함수
-char *ft_strmapi(const char *s, char (*f)(unsigned int, char))
-s문자열의 각 문자에 f함수를 적용시킨 문자열을 새로 할당하여 반환해주는 함수
-void ft_striteri(char *s, void (*f)(unsigned int, char*))
-새로운 할당없이 문자열s 각 문자에 f함수 바로 적용하는 함수, 반환값 없음
-파일 디스크립터
-리눅스, 유닉스 계열의 시스템에서 프로세스가 파일을 다룰 때 사용하는 개념으로
-프로세스에서 특정 파일에 접근할 때 사용하는 추상적인 값
-표준 입력 : 0
-표준 출력 : 1
-표준 에러 출력 : 2
-void ft_putchar_fd(char c, int fd)
-c - 출력할 문자
-fd - 쓰일 파일 디스크립터
-문자를 출력해주는 함수
-void ft_putstr_fd(char *s, int fd)
-s - 출력할 문자열
-fd - 쓰일 파일 디스크립터
+- s1 - 찾아볼 문자열
+- set - 지울 문자들
+- set에 포함된 문자들을 s1문자열의 양끝에서 제거한 결과를 반환하는 함수
+
+### 20. char **ft_split(const char *s, char c)
+- s - 나눌 문자열
+- c - 구분
+문자열을 구분자로 나누어 이차원 문자열로 반환하는 함수.  
+- end - 문자열 마지막 인덱스.  
+- start - 문자열 처음 인덱스.  
+- split_size - 쪼개질 문자열 수.  
+
+### 21. char *ft_itoa(int n)
+int형 숫자를 받아 문자열숫자로 반환하는 함수.  
+
+### 22. char *ft_strmapi(const char *s, char (*f)(unsigned int, char))
+s문자열의 각 문자에 f함수를 적용시킨 문자열을 새로 할당하여 반환해주는 함수.  
+
+### 23. void ft_striteri(char *s, void (*f)(unsigned int, char*))
+새로운 할당없이 문자열s 각 문자에 f함수 바로 적용하는 함수, 반환값 없음.  
+
+## 파일 디스크립터
+리눅스, 유닉스 계열의 시스템에서 프로세스가 파일을 다룰 때 사용하는 개념으로, 프로세스에서 특정 파일에 접근할 때 사용하는 추상적인 값   
+- 표준 입력 : 0
+- 표준 출력 : 1
+- 표준 에러 출력 : 2
+### 24. void ft_putchar_fd(char c, int fd)
+- c - 출력할 문자
+- fd - 쓰일 파일 디스크립터
+- 문자를 출력해주는 함수
+
+### 25. void ft_putstr_fd(char *s, int fd)
+- s - 출력할 문자열
+- fd - 쓰일 파일 디스크립터
 문자열을 출력해주는 함수
-void ft_putendl_fd(char *s, int fd)
-s - 출력할 문자열
-fd - 쓰일 파일 디스크립터
+
+### 26. void ft_putendl_fd(char *s, int fd)
+- s - 출력할 문자열
+- fd - 쓰일 파일 디스크립터
 문자열을 출력해주고 다음줄로 넘어가주는 함수
-void ft_putnbr_fd(int n, int fd)
-n - int형 숫자
-fd - 쓰일 파일 디스크립터
+
+### 27. void ft_putnbr_fd(int n, int fd)
+- n - int형 숫자
+- fd - 쓰일 파일 디스크립터
 int형 숫자를 문자열숫자로 출력해주는 함수
-Bonus Part
-t_list *ft_lstnew(void *content)
-새로운 노드를 생성하는 함수
-새로운 노드의 content는 인자로 받아온 content값으로 초기화 한다.
-새로운 노드의 next는 NULL로 초기화 한다.
-void ft_lstadd_front(t_list **lst, t_list *new)
-**lst - 리스트의 맨 앞 (주소), 결국 하나의 연결리스트임
-*lst - 연결리스트의 head, *(lst + 0)인 셈 
-new - 리스트에 추가할 노드
-연결리스트 맨앞에 새로운 노드를 추가하는 함수
-new노드의 다음 주소를 head로 설정
-head를 new노드로 바꾼다.
-int ft_lstsize(t_list *lst)
+
+## Bonus Part
+
+### 1. t_list *ft_lstnew(void *content)
+새로운 노드를 생성하는 함수.  
+새로운 노드의 content는 인자로 받아온 content값으로 초기화 한다.   
+새로운 노드의 next는 NULL로 초기화 한다.   
+
+### 2. void ft_lstadd_front(t_list **lst, t_list *new)
+- **lst - 리스트의 맨 앞 (주소), 결국 하나의 연결리스트임
+- *lst - 연결리스트의 head, *(lst + 0)인 셈 
+- new - 리스트에 추가할 노드
+연결리스트 맨앞에 새로운 노드를 추가하는 함수.  
+new노드의 다음 주소를 head로 설정   
+head를 new노드로 바꾼다.   
+
+### 3. int ft_lstsize(t_list *lst)
 리스트의 노드의 수를 반환해주는 함수
-t_list *ft_lstlast(t_list *lst)
-lst - 리스트의 head 주소
+### 4. t_list *ft_lstlast(t_list *lst)
+- lst - 리스트의 head 주소
 마지막 노드 주소를 반환해주는 함수
-void ft_lstadd_back(t_list **lst, t_list *new)
+### 5. void ft_lstadd_back(t_list **lst, t_list *new)
 리스트의 마지막에 노드를 추가해주는 함수
 마지막노드의 next를 새로운노드의 next로 이전한다.
 마지막노드의 next를 new노드와 연결한다.
-void ft_lstdelone(t_list *lst, void (*del)(void *))
-lst - 삭제할 노드
-del - 노드의 content 삭제에 사용되는 함수 포인터
+### 6. void ft_lstdelone(t_list *lst, void (*del)(void *))
+- lst - 삭제할 노드
+- del - 노드의 content 삭제에 사용되는 함수 포인터
 특정 노드를 삭제해주는 함수
-del 함수로 content 변수 free
-lst 노드 free
+1. del 함수로 content 변수 free
+2. lst 노드 free
 content 변수는 주소를 담고 있다. 그 주소를 그리키는 값도 삭제해야 한다.
 del함수가 content를 free한다.
-void ft_lstclear(t_list **lst, void (*del)(void *))
-**lst - 삭제 할 리스트
-del - 함수 포인터
+
+### 7.void ft_lstclear(t_list **lst, void (*del)(void *))
+- **lst - 삭제 할 리스트
+- del - 함수 포인터
 리스트의 전체 노드 데이터를 삭제하는 함수
-temp에 head노드의 다음주소(두 번째 노드) 임시 저장
-현재 노드의 content를 del함수로 free
-현재 노드 free
-두 번째 노드를 lst로
-while문 다 돌면 lst를 NULL
-void ft_lstiter(t_list *lst, void (*f)(void *))
-*lst - 리스트의 head노드 주소
-f - 각 노드의 content에 적용 할 함수
+1. temp에 head노드의 다음주소(두 번째 노드) 임시 저장
+2. 현재 노드의 content를 del함수로 free
+3. 현재 노드 free
+4. 두 번째 노드를 lst로
+5. while문 다 돌면 lst를 NULL
+
+### 8. void ft_lstiter(t_list *lst, void (*f)(void *))
+- *lst - 리스트의 head노드 주소
+- f - 각 노드의 content에 적용 할 함수
 리스트의 각 노드의 content에 지정 함수를 적용해주는 함수
-t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
-*lst - 리스트의 head노드 주소
-f - 각 노드의 content에 적용시킬 함수
-del - 각 노드의 content를 삭제하는 함수
-f함수를 적용시킨 new리스트를 ft_lstnew함수를 이용해 만든다.
-lst = lst->next; 두 번째 노드를 현재노드로 바꾼다
-while문
-두 번째 노드 주소를 새로 만든 노드주소로 한다.
-temp다음 주소가 비어있으면 ft_lstclear
-temp다음 노드를 현재노드로 바꾼다.
-lst다음 노드도 현재노드로 바꾼다.
-새로 복사한 리스트 반환
+### 9. t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+- *lst - 리스트의 head노드 주소
+- f - 각 노드의 content에 적용시킬 함수
+- del - 각 노드의 content를 삭제하는 함수
+1. f함수를 적용시킨 new리스트를 ft_lstnew함수를 이용해 만든다.
+2. lst = lst->next; 두 번째 노드를 현재노드로 바꾼다
+3. while문
+4. 두 번째 노드 주소를 새로 만든 노드주소로 한다.
+5. temp다음 주소가 비어있으면 ft_lstclear
+6. temp다음 노드를 현재노드로 바꾼다.
+7. lst다음 노드도 현재노드로 바꾼다.
+8. 새로 복사한 리스트 반환
 리스트의 각 노드의 content에 f함수를 적용한 리스트를 복사하여 반환하는 함수
-Makefile
-.PHONY - 1. 동일한 파일의 이름을 피하기위해
-         2. 성능 개선
-내장변수 - CC, CFLAGS …
-자동변수 - $@, $< …
+
+## Makefile
+- .PHONY 
+1. 동일한 파일의 이름을 피하기위해
+2. 성능 개선
+- 내장변수 - CC, CFLAGS …
+- 자동변수 - $@, $< …
 $@ - 현재 타겟 이름
 $^ - 현재 타겟이 의존하는 대상 전체 목록
 $? - 현재 타겟이 의존하는 대상 중 변경된 목록
 $< - 현재 타겟이 의존하는 대상 중 첫 재료
+
 clean - 오브젝트 부산물 지우기
 fclean - 모든 부산물 다 지우기
 all - 보너스 제외 라이브러리 만들기
 bonus - 보너스 포함 라이브러리 만들기
+
 .c.o - 패턴 룰
 .o - 타겟파일이 된다. $@, 확장자를 제외한 파일이름 + .o
 .c - $<, 확장자를 제외한 파일이름 + .c
 .c.o 와 %.o : %.c 는 같은 의미
-gcc -Wall -Wextra -Werror 로 오브젝트파일 만든다.
-ar crv로 만들어진 오브젝트파일로 라이브러리 파일 만든다.
+
+1. gcc -Wall -Wextra -Werror 로 오브젝트파일 만든다.
+
+2. ar crv로 만들어진 오브젝트파일로 라이브러리 파일 만든다.
 c - 아카이브가 생성 될 때 기본적으로 표준 에러로 기록되는 진단 메세지 출력을 제한
 v - -r과 같이 사용시 파일설명, 구성 파일들, 유지활동 상세기록.
   - 자세하게 내용을 보여주는 verbose모드
 r - 새로운 오브젝트파일이면 추가, 기존 파일이면 치환
+
 make -p로 Make에서 내부적으로 정의 된 변수를 볼 수 있다. 
