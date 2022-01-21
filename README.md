@@ -104,7 +104,7 @@ str문자열에서 to_find문자열 찾기
 찾으면 찾은시작 주소 반환   
 
 ### 15. int ft_atoi(const char *str)
-- str - int형으로 바꿀 문자열
+- str - int형으로 바꿀 문자열.  
 문자열 형태의 숫자를 int형 숫자로 변환해주는 함수
 
 ### 16. void *ft_calloc(size_t count, size_t size)
