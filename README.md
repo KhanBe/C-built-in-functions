@@ -1,4 +1,4 @@
-# C-built-in-functions
+# Cadet, libft :p
 ## 42서울에서 필요한 내장함수 (C language)를 구현하는 프로젝트이다.
 
 42seoul 본과정의 첫프로젝트이다.
